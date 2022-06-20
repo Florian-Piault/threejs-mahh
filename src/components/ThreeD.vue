@@ -71,7 +71,7 @@ function setWalls() {
       i % 2
         ? // ? new THREE.MeshBasicMaterial({ color: Math.random() * 0xffffff })
           new THREE.MeshBasicMaterial({
-            map: new THREE.TextureLoader().load("@/assets/jocondedab.png"),
+            map: new THREE.TextureLoader().load("src/assets/jocondedab.png"),
           })
         : materialWall
     );

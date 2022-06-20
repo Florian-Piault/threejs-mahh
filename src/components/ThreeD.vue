@@ -88,7 +88,7 @@ function setWalls() {
 
   const wallPlane = new THREE.PlaneGeometry(100, 15, 10, 10);
   wallPlane.rotateY(-Math.PI / 2);
-  const textureWallPlane = new THREE.TextureLoader().load("@/wall.jpeg");
+  const textureWallPlane = new THREE.TextureLoader().load("@/assets/wall.jpeg");
   textureWallPlane.wrapS = textureWallPlane.wrapT = THREE.RepeatWrapping;
   textureWallPlane.repeat.set(20, 20);
   const materialWallPlane = new THREE.MeshBasicMaterial({

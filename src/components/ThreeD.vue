@@ -36,7 +36,7 @@ document.querySelector("#app").appendChild(renderer.domElement);
 
 const geometryPlane = new THREE.PlaneGeometry(1000, 1000, 10, 10);
 geometryPlane.rotateX(-Math.PI / 2);
-const texturePlane = new THREE.TextureLoader().load("src/assets/plane.jpg");
+const texturePlane = new THREE.TextureLoader().load("@/assets/plane.jpg");
 texturePlane.wrapS = texturePlane.wrapT = THREE.RepeatWrapping;
 texturePlane.repeat.set(50, 50);
 const materialPlane = new THREE.MeshBasicMaterial({ map: texturePlane });
@@ -60,7 +60,7 @@ function setWalls() {
     z = -20;
 
   const geometryWall = new THREE.BoxGeometry(5, 3, 10);
-  const textureWall = new THREE.TextureLoader().load("src/assets/wall.jpeg");
+  const textureWall = new THREE.TextureLoader().load("@/assets/wall.jpeg");
   const materialWall = new THREE.MeshBasicMaterial({ map: textureWall });
 
   for (let i = 0; i < 21; i++) {
@@ -71,7 +71,7 @@ function setWalls() {
       i % 2
         ? // ? new THREE.MeshBasicMaterial({ color: Math.random() * 0xffffff })
           new THREE.MeshBasicMaterial({
-            map: new THREE.TextureLoader().load("src/assets/jocondedab.png"),
+            map: new THREE.TextureLoader().load("@/assets/jocondedab.png"),
           })
         : materialWall
     );
@@ -88,9 +88,7 @@ function setWalls() {
 
   const wallPlane = new THREE.PlaneGeometry(100, 15, 10, 10);
   wallPlane.rotateY(-Math.PI / 2);
-  const textureWallPlane = new THREE.TextureLoader().load(
-    "src/assets/wall.jpeg"
-  );
+  const textureWallPlane = new THREE.TextureLoader().load("@/assets/wall.jpeg");
   textureWallPlane.wrapS = textureWallPlane.wrapT = THREE.RepeatWrapping;
   textureWallPlane.repeat.set(20, 20);
   const materialWallPlane = new THREE.MeshBasicMaterial({

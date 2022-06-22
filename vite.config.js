@@ -8,8 +8,10 @@ export default defineConfig({
   server: {
     host: true,
   },
-  alias: {
-    "/@": path.resolve(__dirname, "./src"),
+  resolve: {
+    alias: {
+      "/@": path.resolve(__dirname, "./src"),
+    },
   },
   assetsIncludes: ["src/assets/**/*"],
 });

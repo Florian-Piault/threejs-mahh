@@ -7,7 +7,10 @@ import { ref } from "vue";
 
 import planeAsset from "../assets/plane.jpg";
 import wallAsset from "../assets/wall.jpeg";
-import jocondedabAsset from "../assets/jocondedab.png";
+// import jocondedabAsset from "../assets/jocondedab.png";
+import vangogh from "../assets/vangogh.webp";
+import vangogh2 from "../assets/vangogh2.jpg";
+import frida from "../assets/frida.jpeg";
 
 let scene, camera, renderer;
 let actualObjectIndex = ref(0);
@@ -67,15 +70,23 @@ function setWalls() {
   const textureWall = new THREE.TextureLoader().load(wallAsset);
   const materialWall = new THREE.MeshBasicMaterial({ map: textureWall });
 
+  const vangoghAsset = new THREE.TextureLoader().load(vangogh);
+  const vangogh2Asset = new THREE.TextureLoader().load(vangogh2);
+  const fridaAssets = new THREE.TextureLoader().load(frida);
+
   for (let i = 0; i < 21; i++) {
     const posX = x + 5 * i;
     const wall = new THREE.Mesh(geometryWall, materialWall);
     const wall2 = new THREE.Mesh(
       geometryWall,
       i % 2
-        ? // ? new THREE.MeshBasicMaterial({ color: Math.random() * 0xffffff })
-          new THREE.MeshBasicMaterial({
-            map: new THREE.TextureLoader().load(jocondedabAsset),
+        ? new THREE.MeshBasicMaterial({
+            map:
+              i === 1 || i === 7
+                ? vangoghAsset
+                : i === 3 || i === 9
+                ? vangogh2Asset
+                : fridaAssets,
           })
         : materialWall
     );
